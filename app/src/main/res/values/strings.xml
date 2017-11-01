@@ -5,32 +5,59 @@
     <string name="channel_high_importance">High Importance</string>
     <string name="channel_high_importance_description">High Importance Notifications</string>
 
+    <string name="group_channel_high_importance_id">High-Importance-Group</string>
+    <string name="group_channel_high_importance">High Importance Group</string>
+    <string name="group_channel_high_importance_description">High Importance Group Notifications</string>
+
     <string name="channel_default_importance_id">Default-Importance</string>
     <string name="channel_default_importance">Default Importance</string>
     <string name="channel_default_importance_description">Default Importance Notifications</string>
+
+    <string name="group_channel_default_importance_id">Default-Importance-Group</string>
+    <string name="group_channel_default_importance">Default Importance Group</string>
+    <string name="group_channel_default_importance_description">Default Importance Group Notifications</string>
 
     <string name="channel_min_importance_id">Minimum-Importance</string>
     <string name="channel_min_importance">Minimum Importance</string>
     <string name="channel_min_importance_description">Minimum Importance Notifications</string>
 
+    <string name="group_channel_min_importance_id">Minimum-Importance-Group</string>
+    <string name="group_channel_min_importance">Minimum Importance Group</string>
+    <string name="group_channel_min_importance_description">Minimum Importance Group Notifications</string>
+
     <string name="channel_low_importance_id">Low-Importance</string>
     <string name="channel_low_importance">Low Importance</string>
     <string name="channel_low_importance_description">Low Importance Notifications</string>
+
+    <string name="group_channel_low_importance_id">Low-Importance-Group</string>
+    <string name="group_channel_low_importance">Low Importance Group</string>
+    <string name="group_channel_low_importance_description">Low Importance Group Notifications</string>
 
     <string name="channel_none_importance_id">None-Importance</string>
     <string name="channel_none_importance">None Importance</string>
     <string name="channel_none_importance_description">Un-Important Notifications</string>
 
+    <string name="group_channel_none_importance_id">None-Importance-Group</string>
+    <string name="group_channel_none_importance">None Importance Group</string>
+    <string name="group_channel_none_importance_description">Un-Important Group Notifications</string>
+
     <string name="hint">Notification Text</string>
     <string name="trigger_notification">Notify</string>
     <string name="error_empty_notification_text">Notification text should not be empty</string>
-
 
     <string name="dummy_text_high">Test High</string>
     <string name="dummy_text_default">Test Default</string>
     <string name="dummy_text_min">Test Min</string>
     <string name="dummy_text_low">Test Low</string>
     <string name="dummy_text_none">Test None</string>
+
+    <string name="group_dummy_text_high">Group Test High</string>
+    <string name="group_dummy_text_default">Group Test Default</string>
+    <string name="group_dummy_text_min">Group Test Min</string>
+    <string name="group_dummy_text_low">Group Test Low</string>
+    <string name="group_dummy_text_none">Group Test None</string>
+
+    <string name="notification_settings">Notification Settings</string>
 
     <string name="app_name">Notification Channels Demo</string>
 </resources>
