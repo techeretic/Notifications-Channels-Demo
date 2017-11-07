@@ -9,9 +9,21 @@
     <string name="group_channel_high_importance">High Importance Group</string>
     <string name="group_channel_high_importance_description">High Importance Group Notifications</string>
 
-    <string name="channel_default_importance_id">Default-Importance</string>
-    <string name="channel_default_importance">Default Importance</string>
-    <string name="channel_default_importance_description">Default Importance Notifications</string>
+    <string name="channel_default_importance_id_1">Default-Importance-1</string>
+    <string name="channel_default_importance_1">Default Importance 1</string>
+    <string name="channel_default_importance_description_1">Default Importance Notifications 1</string>
+
+    <string name="channel_default_importance_id_2">Default-Importance-2</string>
+    <string name="channel_default_importance_2">Default Importance 2</string>
+    <string name="channel_default_importance_description_2">Default Importance Notifications 2</string>
+
+    <string name="channel_default_importance_id_3">Default-Importance-3</string>
+    <string name="channel_default_importance_3">Default Importance 3</string>
+    <string name="channel_default_importance_description_3">Default Importance Notifications 3</string>
+
+    <string name="channel_default_importance_id_4">Default-Importance-4</string>
+    <string name="channel_default_importance_4">Default Importance 4</string>
+    <string name="channel_default_importance_description_4">Default Importance Notifications 4</string>
 
     <string name="group_channel_default_importance_id">Default-Importance-Group</string>
     <string name="group_channel_default_importance">Default Importance Group</string>
@@ -25,9 +37,17 @@
     <string name="group_channel_min_importance">Minimum Importance Group</string>
     <string name="group_channel_min_importance_description">Minimum Importance Group Notifications</string>
 
-    <string name="channel_low_importance_id">Low-Importance</string>
-    <string name="channel_low_importance">Low Importance</string>
-    <string name="channel_low_importance_description">Low Importance Notifications</string>
+    <string name="channel_low_importance_id_1">Low-Importance-1</string>
+    <string name="channel_low_importance_1">Low Importance 1</string>
+    <string name="channel_low_importance_description_1">Low Importance Notifications 1</string>
+
+    <string name="channel_low_importance_id_2">Low-Importance-2</string>
+    <string name="channel_low_importance_2">Low Importance 2</string>
+    <string name="channel_low_importance_description_2">Low Importance Notifications 2</string>
+
+    <string name="channel_low_importance_id_3">Low-Importance-3</string>
+    <string name="channel_low_importance_3">Low Importance 3</string>
+    <string name="channel_low_importance_description_3">Low Importance Notifications 3</string>
 
     <string name="group_channel_low_importance_id">Low-Importance-Group</string>
     <string name="group_channel_low_importance">Low Importance Group</string>
@@ -46,15 +66,22 @@
     <string name="error_empty_notification_text">Notification text should not be empty</string>
 
     <string name="dummy_text_high">Test High</string>
-    <string name="dummy_text_default">Test Default</string>
+    <string name="dummy_text_default_1">Test Default 1</string>
+    <string name="dummy_text_default_2">Test Default 2</string>
+    <string name="dummy_text_default_3">Test Default 3</string>
+    <string name="dummy_text_default_4">Test Default 4</string>
     <string name="dummy_text_min">Test Min</string>
-    <string name="dummy_text_low">Test Low</string>
+    <string name="dummy_text_low_1">Test Low 1</string>
+    <string name="dummy_text_low_2">Test Low 2</string>
+    <string name="dummy_text_low_3">Test Low 3</string>
     <string name="dummy_text_none">Test None</string>
 
     <string name="group_dummy_text_high">Group Test High</string>
     <string name="group_dummy_text_default">Group Test Default</string>
     <string name="group_dummy_text_min">Group Test Min</string>
-    <string name="group_dummy_text_low">Group Test Low</string>
+    <string name="group_dummy_text_low_1">Group Test Low 1</string>
+    <string name="group_dummy_text_low_2">Group Test Low 2</string>
+    <string name="group_dummy_text_low_3">Group Test Low 3</string>
     <string name="group_dummy_text_none">Group Test None</string>
 
     <string name="notification_settings">Notification Settings</string>
