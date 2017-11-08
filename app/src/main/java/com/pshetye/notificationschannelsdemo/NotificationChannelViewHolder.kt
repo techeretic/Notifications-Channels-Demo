@@ -7,6 +7,10 @@ import android.content.Intent
 import android.provider.Settings
 import android.support.design.widget.Snackbar
 import android.support.v4.app.NotificationCompat
+import android.support.v4.app.NotificationCompat.GROUP_ALERT_ALL
+import android.support.v4.app.NotificationCompat.GROUP_ALERT_SUMMARY
+import android.support.v4.app.NotificationManagerCompat.IMPORTANCE_DEFAULT
+import android.support.v4.app.NotificationManagerCompat.IMPORTANCE_HIGH
 import android.support.v4.app.TaskStackBuilder
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -16,18 +20,18 @@ import android.widget.TextView
 
 class NotificationChannelViewHolder(private val rootView : View) : RecyclerView.ViewHolder(rootView) {
 
-    companion object {
-        private var counter = 0
-    }
     private var channelName : TextView = itemView.findViewById(R.id.channel_name)
     private var notificationText : EditText = itemView.findViewById(R.id.channel_notification_text)
     private var notify : ImageView = itemView.findViewById(R.id.channel_notification_trigger)
     private var notificationSettings : ImageView = itemView.findViewById(R.id.notification_settings)
     private var context = itemView.context
+    private var counter = 0
 
     fun bind(channel: Channel) {
         val channelId = context.getString(channel.channelId)
-        val inboxStyle = NotificationCompat.InboxStyle()
+        val oddInboxStyle = NotificationCompat.InboxStyle()
+        val evenInboxStyle = NotificationCompat.InboxStyle()
+        val lowImportanceInboxStyle = NotificationCompat.InboxStyle()
         channelName.setText(channel.channelName)
         notificationText.setText(channel.dummyTestText)
         notificationSettings.setOnClickListener({
@@ -40,12 +44,12 @@ class NotificationChannelViewHolder(private val rootView : View) : RecyclerView.
         val builder = NotificationCompat
                 .Builder(context, channelId)
                 .setSmallIcon(channel.channelNotificationIcon)
-                .setContentTitle("Notification")
                 .setAutoCancel(true)
-                .setGroup(context.getString(channel.groupId))
-                .setStyle(inboxStyle)
 
-        var intentText: String = ""
+        var intentText = ""
+
+        val evenName = "Page-Notifications-Group-0"
+        val oddName = "Page-Notifications-Group-1"
 
         notify.setOnClickListener({
             val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -54,9 +58,34 @@ class NotificationChannelViewHolder(private val rootView : View) : RecyclerView.
             } else {
                 val notificationContent = "${notificationText.text} - line $counter"
                 intentText += "\n$notificationContent"
-                inboxStyle.setBigContentTitle(channel.name)
-                inboxStyle.addLine(notificationContent)
-                builder.setContentText(notificationContent).setNumber(++counter)
+
+                var notificationID = channel.notificationId
+                if (channel.importance == IMPORTANCE_DEFAULT ||
+                        channel.importance == IMPORTANCE_HIGH) {
+                    builder.setGroupAlertBehavior(if (counter < 2) GROUP_ALERT_ALL else GROUP_ALERT_SUMMARY)
+                    if (counter.rem(2) == 0) {
+                        builder.setGroup(evenName)
+                                .setContentTitle(channel.name)
+
+                        evenInboxStyle.setBigContentTitle(channel.name)
+                        evenInboxStyle.addLine(notificationContent)
+                        builder.setStyle(evenInboxStyle).setNumber(++counter)
+                    } else {
+                        notificationID = channel.notificationId*10
+
+                        builder.setGroup(oddName)
+                                .setContentTitle(channel.name)
+
+                        oddInboxStyle.setBigContentTitle(channel.name)
+                        oddInboxStyle.addLine(notificationContent)
+                        builder.setStyle(oddInboxStyle).setNumber(++counter)
+                    }
+                } else {
+                    lowImportanceInboxStyle.setBigContentTitle(channel.name)
+                    lowImportanceInboxStyle.addLine(notificationContent)
+                    builder.setContentTitle(channel.name)
+                            .setStyle(lowImportanceInboxStyle).setNumber(++counter)
+                }
 
                 val resultIntent = Intent(context, NotifiedActivity::class.java)
                         .putExtra(NotifiedActivity.Companion.KEY_RESULT, intentText)
@@ -71,7 +100,8 @@ class NotificationChannelViewHolder(private val rootView : View) : RecyclerView.
                 )
 
                 builder.setContentIntent(resultPendingIntent)
-                notificationManager.notify(channel.notificationId, builder.build())
+
+                notificationManager.notify(notificationID, builder.build())
             }
         })
     }
